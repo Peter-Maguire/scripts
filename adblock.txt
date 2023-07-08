@@ -1,0 +1,21 @@
+# Remove YouTube annoyances
+
+# Sidebar "Shorts" link
+www.youtube.com##yt-formatted-string:has-text(/Shorts/):upward(ytd-guide-entry-renderer)
+www.youtube.com##.ytd-mini-guide-entry-renderer:has-text(/Shorts/):upward(ytd-mini-guide-entry-renderer)
+
+# Sidebar "Explore" link
+www.youtube.com##yt-formatted-string:has-text(/Explore/):upward(ytd-guide-entry-renderer)
+www.youtube.com##.ytd-mini-guide-entry-renderer:has-text(/Explore/):upward(ytd-mini-guide-entry-renderer)
+
+# Shorts in subs feed
+www.youtube.com##ytd-thumbnail-overlay-time-status-renderer[overlay-style='SHORTS']:upward(ytd-rich-item-renderer)
+
+# Other misc annoyances
+www.youtube.com##.ytp-ce-covering-overlay
+www.youtube.com##.ytp-ce-element
+www.youtube.com##.ytd-rich-section-renderer
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+
+# New reddit opt-in
+old.reddit.com###redesign-beta-optin-btn
