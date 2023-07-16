@@ -1,0 +1,153 @@
+{
+  "$schema": "https://raw.githubusercontent.com/PazerOP/tf2_bot_detector/master/schemas/v3/rules.schema.json",
+  "file_info": {
+    "authors": [
+      "Big P"
+    ],
+    "title": "Big P cheater ruleset",
+    "update_url": ""
+  },
+  "rules": [
+    {
+      "actions": {
+        "mark": [
+          "cheater"
+        ]
+      },
+      "description": "[BIGP] Spiderman spam",
+      "triggers": {
+        "chatmsg_text_match": {
+          "case_sensitive": false,
+          "mode": "contains",
+          "patterns": [
+            "SPIDER-MAN 4 WAS REAL",
+            "bit.ly/3lXhvoO"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "cheater"
+        ]
+      },
+      "description": "[BIGP] OMEGATRONIC",
+      "triggers": {
+        "chatmsg_text_match": {
+          "case_sensitive": false,
+          "mode": "contains",
+          "patterns": [
+            "OMEGATRONIC"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "cheater"
+        ]
+      },
+      "description": "[BIGP] p4l",
+      "triggers": {
+        "chatmsg_text_match": {
+          "case_sensitive": false,
+          "mode": "word",
+          "patterns": [
+            "youtube.com/@p2l",
+            "#fucktf2",
+            "discord.gg/xJC2p4ux7H"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "cheater"
+        ]
+      },
+      "description": "[BIGP] DoesHotter",
+      "triggers": {
+        "chatmsg_text_match": {
+          "case_sensitive": false,
+          "mode": "word",
+          "patterns": [
+            "youtube.com/@Doeshotterino",
+            "DoesHotterReturnsForMore",
+            "DoesHotter"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "suspicious"
+        ]
+      },
+      "description": "[BIGP] Ram ranch",
+      "triggers": {
+        "chatmsg_text_match": {
+          "case_sensitive": false,
+          "mode": "contains",
+          "patterns": [
+            "ram ranch"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "suspicious"
+        ]
+      },
+      "description": "[BIGP] Maxwell the cat",
+      "triggers": {
+        "username_text_match": {
+          "case_sensitive": false,
+          "mode": "contains",
+          "patterns": [
+            "maxwell the cat"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "suspicious"
+        ]
+      },
+      "description": "[BIGP] Possible DoesHotter",
+      "triggers": {
+        "username_text_match": {
+          "case_sensitive": false,
+          "mode": "regex",
+          "patterns": [
+            "\\d{8,}"
+          ]
+        }
+      }
+    },
+    {
+      "actions": {
+        "mark": [
+          "cheater"
+        ]
+      },
+      "description": "[BIGP] BETATRONIC",
+      "triggers": {
+        "username_text_match": {
+          "case_sensitive": false,
+          "mode": "contains",
+          "patterns": [
+            "BETATRONIC"
+          ]
+        }
+      }
+    },
+  ]
+}
