@@ -1,0 +1,67 @@
+matches:
+  - trigger: ":espanso"
+    replace: "Hi there!"
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+  - regex: "in(?P<hours>\\d+)h"
+    replace: "<t:{{offset}}:R>"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%s"
+      - name: offset
+        type: shell
+        params:
+          cmd: "[int]$Env:ESPANSO_TIMESTAMP+([int]$Env:ESPANSO_HOURS*60*60)"
+  - trigger: ":uuid"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "(New-Guid).GUID"
+  - regex: ":rand(?P<chars>[0-9]+)char"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "-join ((48..57) + (65..90) + (97..122) * $Env:ESPANSO_CHARS | Get-Random -Count $Env:ESPANSO_CHARS | ForEach-Object {[char]$_})"
+  - trigger: ":email"
+    replace: "r{{output}}@[email]"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "-join ((48..57) + (65..90) + (97..122) | Get-Random -Count 20 | ForEach-Object {[char]$_})"
+          shell: powershell
+  - trigger: ":invite"
+    replace: "https://discord.com/oauth2/authorize?client_id={{clipboard}}&scope=bot+applications.commands&permissions=0"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+  - trigger: ":repl"
+    replace: "https://replit.com/{{clipboard}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+  - trigger: ":sqluser"
+    replace: "CREATE DATABASE {{form1.name}}; CREATE USER {{form1.name}} WITH LOGIN PASSWORD '{{output}}'; GRANT ALL ON DATABASE {{form1.name}} TO {{form1.name}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "(New-Guid).GUID"
+      - name: "form1"
+        type: form
+        params:
+          layout: "Database/username: [[name]]"
+  - trigger: ":espconfig"
+    replace: "%appdata%/espanso/match/base.yml"
+
