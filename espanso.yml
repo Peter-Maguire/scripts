@@ -26,7 +26,26 @@ matches:
         type: shell
         params:
           cmd: "(New-Guid).GUID"
-  - regex: ":rand(?P<chars>[0-9]+)char"
+  - regex: ":reply"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: output
+        type: shell
+        params:
+          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer xxxxx\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"system`\", `\"content`\": `\"reply to messages with short, casual but polite responses. do not write explanations or refer to yourself as an AI.`\"},{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
+
+  - regex: ":gpt"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: output
+        type: shell
+        params:
+          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer xxxxx\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
+  - regex: ":gpt(?P<chars>[0-9]+)char"
     replace: "{{output}}"
     vars:
       - name: output
@@ -34,7 +53,7 @@ matches:
         params:
           cmd: "-join ((48..57) + (65..90) + (97..122) * $Env:ESPANSO_CHARS | Get-Random -Count $Env:ESPANSO_CHARS | ForEach-Object {[char]$_})"
   - trigger: ":email"
-    replace: "r{{output}}@[email]"
+    replace: "r{{output}}@unacc.eu"
     vars:
       - name: output
         type: shell
@@ -46,7 +65,7 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
-  - trigger: ":repl"
+  - trigger: ":replit"
     replace: "https://replit.com/{{clipboard}}"
     vars:
       - name: "clipboard"
@@ -64,4 +83,11 @@ matches:
           layout: "Database/username: [[name]]"
   - trigger: ":espconfig"
     replace: "%appdata%/espanso/match/base.yml"
-
+  - trigger: ":nesc"
+    replace: "necessary"
+  - trigger: "blatently"
+    replace: "blatantly"
+  - trigger: "definately"
+    replace: "definitely"
+  - trigger: "apparantly"
+    replace: "apparently"
