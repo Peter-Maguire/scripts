@@ -19,3 +19,12 @@ www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 
 # New reddit opt-in
 old.reddit.com###redesign-beta-optin-btn
+
+# Remove Twitter Premium nav element
+twitter.com##a.r-1loqt21.r-1ny4l3l.r-13qz1uu.r-oyd9sg.r-1habvwh.r-16y2uox.r-eqz5dr.r-6koalj.css-175oi2r:nth-of-type(8)
+
+# Remove Twitter right-hand side column
+twitter.com##.r-ttdzmv.r-vacyoi.css-175oi2r > div.css-175oi2r
+
+# Humanbenchmark.com video
+humanbenchmark.com##video
