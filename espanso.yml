@@ -1,3 +1,12 @@
+global_vars:
+  - name: gptkey
+    type: echo
+    params:
+      echo: xx
+  - name: emaildomain
+    type: echo
+    params:
+      echo: xx
 matches:
   - trigger: ":espanso"
     replace: "Hi there!"
@@ -34,8 +43,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer xxxxx\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"system`\", `\"content`\": `\"reply to messages with short, casual but polite responses. do not write explanations or refer to yourself as an AI.`\"},{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
-
+          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer {{gptkey}}\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"system`\", `\"content`\": `\"reply to messages with short, casual but polite responses. do not write explanations or refer to yourself as an AI.`\"},{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
   - regex: ":gpt"
     replace: "{{output}}"
     vars:
@@ -44,8 +52,8 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer xxxxx\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
-  - regex: ":gpt(?P<chars>[0-9]+)char"
+          cmd: "(Invoke-RestMethod -Uri \"https://api.openai.com/v1/chat/completions\" -Method Post -Headers @{\"Authorization\" = \"Bearer {{gptkey}}\"} -ContentType \"application/json\" -Body \"{`\"model`\":`\"gpt-3.5-turbo`\",`\"messages`\":[{`\"role`\": `\"user`\", `\"content`\": `\"$Env:ESPANSO_CLIPBOARD`\"}],`\"temperature`\": 0.7}\").choices[0].message.content"
+  - regex: ":r(and|nd|)(?P<chars>[0-9]+)cha?r"
     replace: "{{output}}"
     vars:
       - name: output
@@ -53,7 +61,7 @@ matches:
         params:
           cmd: "-join ((48..57) + (65..90) + (97..122) * $Env:ESPANSO_CHARS | Get-Random -Count $Env:ESPANSO_CHARS | ForEach-Object {[char]$_})"
   - trigger: ":email"
-    replace: "r{{output}}@unacc.eu"
+    replace: "r{{output}}@{{emaildomain}}"
     vars:
       - name: output
         type: shell
@@ -83,8 +91,14 @@ matches:
           layout: "Database/username: [[name]]"
   - trigger: ":espconfig"
     replace: "%appdata%/espanso/match/base.yml"
+  - trigger: ":unnesc"
+    replace: "unnecessary"
+  - trigger: ":unnesily"
+    replace: "unnecessarily"
   - trigger: ":nesc"
     replace: "necessary"
+  - trigger: ":nesily"
+    replace: "necessarily"
   - trigger: "blatently"
     replace: "blatantly"
   - trigger: "definately"
