@@ -1,4 +1,4 @@
-# Remove YouTube annoyances
+# YOUTUBE
 
 # Sidebar "Shorts" link
 www.youtube.com##yt-formatted-string:has-text(/Shorts/):upward(ytd-guide-entry-renderer)
@@ -17,21 +17,39 @@ www.youtube.com##.ytp-ce-element
 www.youtube.com##.ytd-rich-section-renderer
 www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
 
-# New reddit opt-in
-old.reddit.com###redesign-beta-optin-btn
+# TWITTER
 
-# Remove Twitter Premium nav element
+# Remove Premium nav element
 twitter.com##a.r-1loqt21.r-1ny4l3l.r-13qz1uu.r-oyd9sg.r-1habvwh.r-16y2uox.r-eqz5dr.r-6koalj.css-175oi2r:nth-of-type(8)
 
-# Remove Twitter right-hand side column
+# Remove right-hand side column
 twitter.com##.r-ttdzmv.r-vacyoi.css-175oi2r > div.css-175oi2r
+
+# FACEBOOK
+# Reels in-feed
+facebook.com##i[style*="background-position: 0px -46px;"]:upward(4)
+
+# INSTAGRAM
+# Reels sidebar button
+instagram.com##a[href="/reels/"]:upward(3)
+
+# Meta AI button
+instagram.com##a[href*="meta.ai"]:upward(2)
+
+# Threads button
+instagram.com##a[href*="threads.net"]:upward(2)
+
+
+# OTHERS
 
 # Humanbenchmark.com video
 humanbenchmark.com##video
+
+# New reddit opt-in
+old.reddit.com###redesign-beta-optin-btn
 
 #Linkedin premium nags
 www.linkedin.com##.news-module--with-game
 www.linkedin.com##.premium-upsell-link
 www.linkedin.com##.text-align-left.link-without-hover-state.t-bold.t-black.t-12.feed-identity-module__anchored-widget--premium-upsell.feed-identity-module__anchored-widget.link-without-visited-state.app-aware-link
 www.linkedin.com##.update-components-promo
-
