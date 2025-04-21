@@ -27,7 +27,7 @@ twitter.com##.r-ttdzmv.r-vacyoi.css-175oi2r > div.css-175oi2r
 
 # FACEBOOK
 # Reels in-feed
-facebook.com##i[style*="background-position: 0px -46px;"]:upward(4)
+facebook.com##i[style*="background-position: 0px -46px;"]:upward(8)
 
 # INSTAGRAM
 # Reels sidebar button
