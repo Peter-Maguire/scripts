@@ -29,12 +29,24 @@ twitter.com##.r-ttdzmv.r-vacyoi.css-175oi2r > div.css-175oi2r
 # Reels in-feed
 facebook.com##i[style*="background-position: 0px -46px;"]:upward(8)
 
+# Stories
+facebook.com##div[aria-label="Stories"]:upward(5)
+
+# Video Button
+facebook.com##a[aria-label="Video"]:upward(3)
+
+# Gaming Button
+facebook.com##a[aria-label="Gaming"]:upward(3)
+
 # INSTAGRAM
-# Reels sidebar button
+# Reels button
 instagram.com##a[href="/reels/"]:upward(3)
 
+# Explore button
+instagram.com##a[href="/explore/"]:upward(3)
+
 # Meta AI button
-instagram.com##a[href*="meta.ai"]:upward(2)
+instagram.com,facebook.com##a[href*="meta.ai"]:upward(2)
 
 # Threads button
 instagram.com##a[href*="threads.net"]:upward(2)
