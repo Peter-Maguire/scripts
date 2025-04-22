@@ -11,6 +11,9 @@ www.youtube.com##.ytd-mini-guide-entry-renderer:has-text(/Explore/):upward(ytd-m
 # Shorts in subs feed
 www.youtube.com##ytd-thumbnail-overlay-time-status-renderer[overlay-style='SHORTS']:upward(ytd-rich-item-renderer)
 
+# Restore 5 grid items per row 
+www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
+
 # Other misc annoyances
 www.youtube.com##.ytp-ce-covering-overlay
 www.youtube.com##.ytp-ce-element
@@ -65,3 +68,6 @@ www.linkedin.com##.news-module--with-game
 www.linkedin.com##.premium-upsell-link
 www.linkedin.com##.text-align-left.link-without-hover-state.t-bold.t-black.t-12.feed-identity-module__anchored-widget--premium-upsell.feed-identity-module__anchored-widget.link-without-visited-state.app-aware-link
 www.linkedin.com##.update-components-promo
+
+# Remove nag on time.is
+time.is###attention
