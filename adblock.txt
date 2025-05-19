@@ -49,12 +49,15 @@ instagram.com##a[href="/reels/"]:upward(3)
 # Explore button
 instagram.com##a[href="/explore/"]:upward(3)
 
+# AI Studio
+instagram.com##a[href*="aistudio.instagram.com"]:upward(3)
+
 # Meta AI button
 instagram.com,facebook.com##a[href*="meta.ai"]:upward(2)
 
 # Threads button
 instagram.com##a[href*="threads.net"]:upward(2)
-
+instagram.com##a[href*="threads.com"]:upward(2)
 
 # OTHERS
 
