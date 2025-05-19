@@ -75,3 +75,6 @@ www.linkedin.com##.update-components-promo
 
 # Remove nag on time.is
 time.is###attention
+
+# Remove vertical video from the BBC
+bbc.co.uk,bbc.com##li[data-testid="carousel-item"]:upward(4)
