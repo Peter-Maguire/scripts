@@ -14,6 +14,13 @@ www.youtube.com##ytd-thumbnail-overlay-time-status-renderer[overlay-style='SHORT
 # Restore 5 grid items per row 
 www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 5 !important;)
 
+# Remove "Next" button from YT Player
+www.youtube.com##.ytp-next-button
+
+# Remove autoplay toggle when it's turned off
+www.youtube.com##.ytp-autonav-toggle[title="Autoplay is off"]
+
+
 # Other misc annoyances
 www.youtube.com##.ytp-ce-covering-overlay
 www.youtube.com##.ytp-ce-element
