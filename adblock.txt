@@ -66,7 +66,30 @@ instagram.com,facebook.com##a[href*="meta.ai"]:upward(2)
 instagram.com##a[href*="threads.net"]:upward(2)
 instagram.com##a[href*="threads.com"]:upward(2)
 
+# Liverpool Echo
+
+# Sidebar recommended content
+www.liverpoolecho.co.uk##aside
+
+# Sidebar separator
+www.liverpoolecho.co.uk##hr
+
+# Ad boxes
+www.liverpoolecho.co.uk##div[data-testid*="commercial"]
+
+# Social Media
+www.liverpoolecho.co.uk##section[data-testid="social-follow"]
+
+# Privacy Tools
+www.liverpoolecho.co.uk##div#floating-footer
+
+# Comments
+www.liverpoolecho.co.uk##div#comments-wrapper
+
 # OTHERS
+
+# Consent or pay
+##.pp-prompt
 
 # Humanbenchmark.com video
 humanbenchmark.com##video
@@ -89,5 +112,4 @@ bbc.co.uk,bbc.com##li[data-testid="carousel-item"]:upward(4)
 # Remove google AI overview
 www.google.com##div[aria-label="About this result"]:upward(23)
 
-# Liverpool Echo consent or pay
-www.liverpoolecho.co.uk##.pp-prompt
+
