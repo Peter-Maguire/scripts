@@ -90,4 +90,4 @@ bbc.co.uk,bbc.com##li[data-testid="carousel-item"]:upward(4)
 www.google.com##div[aria-label="About this result"]:upward(23)
 
 # Liverpool Echo consent or pay
-www.liverpoolecho.co.uk##pp-prompt
+www.liverpoolecho.co.uk##.pp-prompt
