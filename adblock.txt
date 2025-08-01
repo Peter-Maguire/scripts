@@ -115,4 +115,6 @@ www.google.com##div[aria-label="About this result"]:upward(23)
 # Google AI Mode button
 www.google.com##a[href*="udm=50"]
 
+# Google short-form content results 
+www.google.com##g-scrolling-carousel:upward(1)
 
