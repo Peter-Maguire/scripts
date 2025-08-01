@@ -112,4 +112,7 @@ bbc.co.uk,bbc.com##li[data-testid="carousel-item"]:upward(4)
 # Remove google AI overview
 www.google.com##div[aria-label="About this result"]:upward(23)
 
+# Google AI Mode button
+www.google.com##a[href*="udm=50"]
+
 
